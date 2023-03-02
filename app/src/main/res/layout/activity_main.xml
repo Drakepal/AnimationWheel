@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/monster"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/monster"/>
+
+    <FrameLayout
+        android:layout_marginBottom="-300dp"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutMenu"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_gravity="center"
+            android:elevation="5dp"
+            android:background="@drawable/lightercircle"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <View
+                android:id="@+id/viewCenterPlaceHolder"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/animation1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="0"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/rotate"
+                    android:src="@drawable/rotate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Rotate"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/animation2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="45"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/scale"
+                    android:src="@drawable/scale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Scale"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/animation3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="90"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/fade"
+                    android:src="@drawable/fade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Fade"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/animation4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="135"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/move"
+                    android:src="@drawable/move"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Move"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/animation5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="180"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/floating"
+                    android:src="@drawable/floating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Float"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/animation6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="225"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/wobble"
+                    android:src="@drawable/wobble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Wobble"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/animation7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="270"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/spin"
+                    android:src="@drawable/spin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Spin"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/animation8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintCircle="@id/viewCenterPlaceHolder"
+                app:layout_constraintCircleAngle="315"
+                app:layout_constraintCircleRadius="90dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/berserk"
+                    android:src="@drawable/berserk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="5pt"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Berserk"/>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/imageButtonCenter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:translationZ="5dp"
+            android:elevation="5dp"
+            android:padding="4dp"
+            android:src="@drawable/largecircle"
+            android:background="@drawable/largecircle"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+
+</FrameLayout>
