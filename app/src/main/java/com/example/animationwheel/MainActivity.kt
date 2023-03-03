@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.Animator.AnimatorListener
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -59,6 +60,22 @@ class MainActivity : AppCompatActivity() {
 
         rotateButton.setOnClickListener {
             rotateImage()
+        }
+
+        scaleButton.setOnClickListener {
+            scaleImage()
+        }
+        fadeButton.setOnClickListener {
+            fadeImage()
+        }
+        moveButton.setOnClickListener {
+            moveImage()
+        }
+        floatingButton.setOnClickListener {
+            floatingImage()
+        }
+        wobbleButton.setOnClickListener {
+            wobbleImage()
         }
 
 
@@ -217,4 +234,47 @@ class MainActivity : AppCompatActivity() {
         animator.disableViewDuringAnimation(rotateButton)
         animator.start()
     }
+
+    private fun scaleImage() {
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 5f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 5f)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(androidImage, scaleX, scaleY)
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.disableViewDuringAnimation(scaleButton)
+        animator.start()
     }
+
+    private fun fadeImage() {
+        val animator = ObjectAnimator.ofFloat(androidImage, View.ALPHA, 0f)
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.disableViewDuringAnimation(fadeButton)
+        animator.start()
+    }
+
+    private fun moveImage() {
+        val animator = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_X, 0f, 1200f, 0f, -1200f, 0f)
+        animator.duration = 2400
+        animator.disableViewDuringAnimation(moveButton)
+        animator.start()
+    }
+
+    private fun floatingImage() {
+        val animator = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_Y, 0f, -2400f, 0f)
+        animator.duration = 10000
+        animator.disableViewDuringAnimation(floatingButton)
+        animator.start()
+    }
+    private fun wobbleImage() {
+        val animator = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_X, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f)
+        animator.duration = 1500
+        animator.disableViewDuringAnimation(moveButton)
+        animator.start()
+        val animatorTwo = ObjectAnimator.ofFloat(androidImage, View.ROTATION, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f)
+        animatorTwo.duration = 1500
+        animatorTwo.disableViewDuringAnimation(moveButton)
+        animatorTwo.start()
+
+    }
+}
