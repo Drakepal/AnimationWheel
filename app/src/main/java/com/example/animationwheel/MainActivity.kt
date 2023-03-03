@@ -116,6 +116,10 @@ class MainActivity : AppCompatActivity() {
                             }
                             result < -100 -> {
                                 Log.d("???", "flip left")
+
+                                for (linearLayout in viewList) {
+                                    startRotate(linearLayout, true)
+                                }
                             }
                         }
                         return false
