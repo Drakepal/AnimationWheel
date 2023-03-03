@@ -77,6 +77,12 @@ class MainActivity : AppCompatActivity() {
         wobbleButton.setOnClickListener {
             wobbleImage()
         }
+        spinButton.setOnClickListener {
+            spinImage()
+        }
+        berserkButton.setOnClickListener {
+            berserkImage()
+        }
 
 
         findView()
@@ -277,4 +283,36 @@ class MainActivity : AppCompatActivity() {
         animatorTwo.start()
 
     }
+
+    private fun berserkImage() {
+        val animator = ObjectAnimator.ofFloat(androidImage, View.ROTATION_X, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f)
+        animator.duration = 1500
+        animator.disableViewDuringAnimation(berserkButton)
+        animator.start()
+        val animatorThree = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_Y, 0f, 700f, 400f, -700f, 0f, 0f, 700f, 400f, -700f, 0f, 0f, 700f, 400f, -700f, 0f, 0f, 700f, 400f, -700f, 0f, 0f, 700f, 400f, -700f, 0f )
+        animatorThree.duration = 1500
+        animatorThree.disableViewDuringAnimation(berserkButton)
+        animatorThree.start()
+        val animatorTwo = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_X, 0f, -700f, 0f, 700f, 0f, 0f, -700f, 0f, 700f, 0f, 0f, -700f, 0f, 700f, 0f, 0f, -700f, 0f, 700f, 0f, 0f, -700f, 0f, 700f, 0f)
+        animatorTwo.duration = 1500
+        animatorTwo.disableViewDuringAnimation(berserkButton)
+        animatorTwo.start()
+
+    }
+
+    private fun spinImage() {
+        spinButton.setOnClickListener {
+            androidImage.animate().apply {
+                duration = 1000
+                rotationYBy(360f)
+            }.withEndAction {
+                androidImage.animate().apply {
+                    duration = 1000
+                    rotationYBy(360f)
+                }.start()
+            }
+        }
+    }
+
+
 }

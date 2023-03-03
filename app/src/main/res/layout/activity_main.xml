@@ -29,7 +29,8 @@
             android:background="@drawable/lightercircle"
             android:clickable="true"
             android:focusable="true"
-            android:focusableInTouchMode="true">
+            android:focusableInTouchMode="true"
+            android:backgroundTint="@color/hot_pink">
 
             <View
                 android:id="@+id/viewCenterPlaceHolder"
@@ -38,7 +39,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/animation1"
@@ -55,7 +56,9 @@
                     android:src="@drawable/rotate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -82,7 +85,8 @@
                     android:src="@drawable/scale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -109,7 +113,8 @@
                     android:src="@drawable/fade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -137,7 +142,8 @@
                     android:src="@drawable/move"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -164,7 +170,8 @@
                     android:src="@drawable/floating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -191,7 +198,8 @@
                     android:src="@drawable/wobble"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -218,7 +226,8 @@
                     android:src="@drawable/spin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -245,7 +254,8 @@
                     android:src="@drawable/berserk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/tiffany_blue"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -270,7 +280,8 @@
             android:src="@drawable/largecircle"
             android:background="@drawable/largecircle"
             android:scaleType="fitCenter"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:backgroundTint="@color/tiffany_blue"/>
 
     </FrameLayout>
 
