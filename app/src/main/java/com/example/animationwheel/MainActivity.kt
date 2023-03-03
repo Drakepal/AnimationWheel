@@ -1,5 +1,9 @@
 package com.example.animationwheel
 
+import android.animation.Animator
+import android.animation.Animator.AnimatorListener
+import android.animation.AnimatorListenerAdapter
+import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +12,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AnticipateOvershootInterpolator
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 
@@ -27,9 +32,35 @@ class MainActivity : AppCompatActivity() {
 
     private var viewList = mutableListOf<LinearLayout>()
 
+
+    lateinit var androidImage: ImageView
+    lateinit var rotateButton: ImageButton
+    lateinit var scaleButton: ImageButton
+    lateinit var fadeButton: ImageButton
+    lateinit var moveButton: ImageButton
+    lateinit var floatingButton: ImageButton
+    lateinit var wobbleButton: ImageButton
+    lateinit var spinButton: ImageButton
+    lateinit var berserkButton: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        androidImage = findViewById(R.id.monster)
+        rotateButton = findViewById(R.id.rotate)
+        scaleButton = findViewById(R.id.scale)
+        fadeButton = findViewById(R.id.fade)
+        moveButton = findViewById(R.id.move)
+        floatingButton = findViewById(R.id.floating)
+        wobbleButton = findViewById(R.id.wobble)
+        spinButton = findViewById(R.id.spin)
+        berserkButton = findViewById(R.id.berserk)
+
+        rotateButton.setOnClickListener {
+            rotateImage()
+        }
+
 
         findView()
         setListener()
@@ -164,4 +195,26 @@ class MainActivity : AppCompatActivity() {
             constraintLayout.visibility = View.VISIBLE
         }
     }
-}
+
+    private fun ObjectAnimator.disableViewDuringAnimation(view: View) {
+
+        addListener(object: AnimatorListenerAdapter() {
+
+            override fun onAnimationStart(animation: Animator) {
+                view.isEnabled = false
+            }
+
+            override fun onAnimationEnd(animation: Animator) {
+                view.isEnabled = true
+            }
+        })
+
+        }
+
+    private fun rotateImage() {
+        val animator = ObjectAnimator.ofFloat(androidImage, View.ROTATION, -360f, 0f)
+        animator.duration = 1500
+        animator.disableViewDuringAnimation(rotateButton)
+        animator.start()
+    }
+    }
