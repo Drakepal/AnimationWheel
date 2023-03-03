@@ -268,7 +268,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun floatingImage() {
         val animator = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_Y, 0f, -2400f, 0f)
-        animator.duration = 10000
+        animator.duration = 5000
         animator.disableViewDuringAnimation(floatingButton)
         animator.start()
     }
