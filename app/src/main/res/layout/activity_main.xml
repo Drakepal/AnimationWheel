@@ -9,10 +9,11 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:layout_marginTop="50dp"
         android:id="@+id/monster"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:src="@drawable/monster"/>
+        android:layout_height="350dp"
+        android:src="@drawable/goku" />
 
     <FrameLayout
         android:layout_marginBottom="-300dp"

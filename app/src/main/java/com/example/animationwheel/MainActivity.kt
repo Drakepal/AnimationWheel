@@ -16,9 +16,12 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.animationwheel.databinding.ActivityMainBinding
+import kotlinx.coroutines.delay
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var imageButtonCenter: ImageButton
 
     private lateinit var constraintLayout: ConstraintLayout
@@ -45,8 +48,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var berserkButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         androidImage = findViewById(R.id.monster)
         rotateButton = findViewById(R.id.rotate)
@@ -82,6 +86,10 @@ class MainActivity : AppCompatActivity() {
         }
         berserkButton.setOnClickListener {
             berserkImage()
+
+
+
+
         }
 
 
@@ -229,12 +237,14 @@ class MainActivity : AppCompatActivity() {
 
             override fun onAnimationEnd(animation: Animator) {
                 view.isEnabled = true
+                binding.monster.setImageResource(R.drawable.goku)
             }
         })
 
         }
 
     private fun rotateImage() {
+        binding.monster.setImageResource(R.drawable.gokuui2)
         val animator = ObjectAnimator.ofFloat(androidImage, View.ROTATION, -360f, 0f)
         animator.duration = 1500
         animator.disableViewDuringAnimation(rotateButton)
@@ -242,6 +252,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun scaleImage() {
+        binding.monster.setImageResource(R.drawable.gokugod)
         val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 5f)
         val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 5f)
         val animator = ObjectAnimator.ofPropertyValuesHolder(androidImage, scaleX, scaleY)
@@ -252,6 +263,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fadeImage() {
+        binding.monster.setImageResource(R.drawable.gokuinstant2)
         val animator = ObjectAnimator.ofFloat(androidImage, View.ALPHA, 0f)
         animator.repeatCount = 1
         animator.repeatMode = ObjectAnimator.REVERSE
@@ -260,6 +272,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun moveImage() {
+        binding.monster.setImageResource(R.drawable.gokunimbus2)
         val animator = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_X, 0f, 1200f, 0f, -1200f, 0f)
         animator.duration = 2400
         animator.disableViewDuringAnimation(moveButton)
@@ -267,12 +280,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun floatingImage() {
+        binding.monster.setImageResource(R.drawable.gokussjone)
         val animator = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_Y, 0f, -2400f, 0f)
         animator.duration = 5000
         animator.disableViewDuringAnimation(floatingButton)
         animator.start()
     }
     private fun wobbleImage() {
+        binding.monster.setImageResource(R.drawable.gokublue)
         val animator = ObjectAnimator.ofFloat(androidImage, View.TRANSLATION_X, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f)
         animator.duration = 1500
         animator.disableViewDuringAnimation(moveButton)
@@ -285,6 +300,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun berserkImage() {
+        binding.monster.setImageResource(R.drawable.gokussj)
         val animator = ObjectAnimator.ofFloat(androidImage, View.ROTATION_X, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f, 0f, 3f, 0f, -3f)
         animator.duration = 1500
         animator.disableViewDuringAnimation(berserkButton)
@@ -297,10 +313,10 @@ class MainActivity : AppCompatActivity() {
         animatorTwo.duration = 1500
         animatorTwo.disableViewDuringAnimation(berserkButton)
         animatorTwo.start()
-
     }
 
     private fun spinImage() {
+        binding.monster.setImageResource(R.drawable.gokutrueui)
         spinButton.setOnClickListener {
             androidImage.animate().apply {
                 duration = 1000
@@ -313,6 +329,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }
